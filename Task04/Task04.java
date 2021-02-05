@@ -17,7 +17,7 @@ public class Task04 {
         shapes[2] = new Section(new Point(0,0), new Point(5,5));
         shapes[3] = new Triangle(new Point(0,0), new Point(0, 5), new Point( 5, 0));
         shapes[4] = new Circle(new Point(5,5), 5);
-        for (Shape s: shapes){
+        for (Shape s: shapes) {
             System.out.println(s);
             if (s != null) {
                 System.out.println("Pole powierzchni " + s.area());
@@ -25,14 +25,21 @@ public class Task04 {
                  4. Dopisz tutaj instrukcję, która rozpozna, który z obiektów jest prostokotąm
                  i wywoła metodę moveTo(new Point(0,0))
                  */
+                boolean isRectangle = s instanceof Rectangle;
+                if (isRectangle) {
+                    System.out.println("obiekt jest prostokatem. " + new Rectangle(new Point(0,0),10,5));
+                    System.out.println("Pole powierzchni " + s.area());
+                    System.out.println();
+                } else {
+                    System.out.println("Obiwekt nie jest prostokatem.");
+                }
             }
+            /**
+             * Oczekiwane wyniki
+             * - pole trójkąta = 12.50
+             * - pole koła     = 75.36
+             */
         }
-        /**
-         * Oczekiwane wyniki
-         * - pole trójkąta = 12.50
-         * - pole koła     = 75.36
-         */
-
     }
 }
 
